@@ -5,6 +5,7 @@ import asyncio
 import discord
 import datetime
 import threading
+import os
 '''
 import sys 
 reload(sys) 
@@ -390,5 +391,5 @@ async def on_message(message):
 				
 	if message.content.startswith('!현재시간'):
 		await client.send_message(channel, datetime.datetime.now().strftime('%H:%M:%S'))
-
-client.run(token)
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
